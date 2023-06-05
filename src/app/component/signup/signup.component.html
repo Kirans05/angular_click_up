@@ -1,0 +1,92 @@
+<app-header name="signup"></app-header>
+<div class="registerMainDiv">
+  <p style="align-self: center; font-size: 25px; margin-bottom: -10px">
+    Sign Up
+  </p>
+  <form class="register_form" [formGroup]="signUpDetails">
+    <div class="individualDiv">
+      <label>First Name</label>
+      <input
+        type="text"
+        placeholder="Enter First Name"
+        style="height: 35px; padding-left: 10px"
+        formControlName="firstName"
+      />
+    </div>
+    <div class="individualDiv">
+      <label>Last Name</label>
+      <input
+        type="text"
+        placeholder="Enter Last Name"
+        style="height: 35px; padding-left: 10px"
+        formControlName="lastName"
+      />
+    </div>
+    <div class="individualDiv">
+      <label>Gender</label>
+      <mat-form-field appearance="fill">
+        <mat-label>Select Gender</mat-label>
+        <mat-select [(value)]="genderSelected">
+          <mat-option value="Male">Male</mat-option>
+          <mat-option value="Female">Female</mat-option>
+          <mat-option value="Other">Other</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="individualDiv">
+      <label>Email Address</label>
+      <input
+        type="text"
+        placeholder="Enter Email Address"
+        style="height: 35px; padding-left: 10px"
+        formControlName="email"
+      />
+    </div>
+    <div class="individualDiv">
+      <input
+        type="date"
+        placeholder="Enter Date of Birth"
+        style="height: 35px; padding-left: 10px"
+        formControlName="dob"
+      />
+    </div>
+    <div class="individualDiv">
+      <label>Mobile Number</label>
+      <input
+        type="number"
+        placeholder="Enter Mobile Number"
+        style="height: 35px; padding-left: 10px"
+        formControlName="mobile"
+      />
+    </div>
+    <div class="individualDiv">
+      <label>Password</label>
+      <input
+        type="password"
+        placeholder="Enter Password"
+        style="height: 35px; padding-left: 10px"
+        formControlName="password"
+      />
+    </div>
+    <div class="individualDiv">
+      <label>Confirm Password</label>
+      <input
+        type="password"
+        placeholder="Enter Confirm Password"
+        style="height: 35px; padding-left: 10px"
+        formControlName="confirmPassword"
+      />
+    </div>
+  </form>
+  <button
+    mat-raised-button
+    color="primary"
+    class="Register_btn"
+    (click)="onSubmit()"
+  >
+    Register
+  </button>
+  <p class="loginText" (click)="navigateToRegister()">
+    Already have account? Log In
+  </p>
+</div>

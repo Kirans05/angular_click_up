@@ -1,0 +1,56 @@
+<div class="tasjPageMainDiv">
+  <app-header name="user"></app-header>
+  <div class="sideBar_mainDiv">
+    <div style="width: 20%">
+      <app-sidebar sidebarValue="task"></app-sidebar>
+    </div>
+    <div class="mainDiv">
+      <div
+        class="taskDiv"
+        style="border-top: 7px solid rgb(136, 136, 242)"
+        (mouseenter)="mouseEnterHandler('to do')"
+        (mouseleave)="mouseLeaveHandler()"
+      >
+        <h1 class="textTag">To Do</h1>
+        <h1
+          class="plusicon"
+          [style.display]="hoverTask == 'to do' ? 'block' : 'none'"
+          (click)="openDialog('todo')"
+        >
+          +
+        </h1>
+      </div>
+      <div
+        class="taskDiv"
+        style="border-top: 7px solid rgb(245, 245, 25)"
+        (mouseenter)="mouseEnterHandler('progress')"
+        (mouseleave)="mouseLeaveHandler()"
+      >
+        <h1 class="textTag">In Progress</h1>
+        <h1
+          class="plusicon"
+          [style.display]="hoverTask == 'progress' ? 'block' : 'none'"
+          (click)="openDialog('progress')"
+        >
+          +
+        </h1>
+      </div>
+      <div
+        class="taskDiv"
+        style="border-top: 7px solid rgb(75, 247, 75)"
+        (mouseenter)="mouseEnterHandler('completed')"
+        (mouseleave)="mouseLeaveHandler()"
+      >
+        <h1 class="textTag">Completed</h1>
+        <h1
+          class="plusicon"
+          [style.display]="hoverTask == 'completed' ? 'block' : 'none'"
+          (click)="openDialog('completed')"
+        >
+          +
+        </h1>
+      </div>
+    </div>
+  </div>
+</div>
+

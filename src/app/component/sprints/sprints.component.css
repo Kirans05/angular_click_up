@@ -1,0 +1,15 @@
+.sprintsPageMainDiv {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.sprintsPageMainDiv .sideBar_mainDiv {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.sprintsPageMainDiv .sideBar_mainDiv .mainDiv {
+  width: 80%;
+}

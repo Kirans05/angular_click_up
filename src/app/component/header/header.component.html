@@ -1,0 +1,31 @@
+<div class="mainHeaderDiv">
+  <h1 class="h1TextTage">CLICK UP</h1>
+  <div class="headerRightPart">
+    <!-- <h1 class="signUpTextTag" (click)="goToPage('/home')" >
+      Home
+    </h1> -->
+    <ng-container *ngIf="name == 'user'; else elseblock1">
+      <div class="userIcon">
+        <h1 class="h1TextTage">K</h1>
+        <div class="status" style="background-color: green"></div>
+      </div>
+      <div class="logoutIcon">
+        <mat-icon class="logout_Icon">logout</mat-icon>
+        <h1 class="h1TextTage" (click)="logoutUser()">LOGOUT</h1>
+      </div>
+    </ng-container>
+    <ng-template #elseblock1>
+      <ng-container *ngIf="name == 'signup'; else elseBlock2">
+        <h1 class="loginInTextTage" (click)="goToPage('/loginIn')">
+          Already have account? Log In
+        </h1>
+      </ng-container>
+
+      <ng-template #elseBlock2>
+        <h1 class="signUpTextTag" (click)="goToPage('/signup')">
+          Don't have an account? Sign Up
+        </h1>
+      </ng-template>
+    </ng-template>
+  </div>
+</div>

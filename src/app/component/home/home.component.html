@@ -1,0 +1,111 @@
+<div class="homePageMainDiv">
+  <app-header name="user"></app-header>
+  <div class="sideBar_mainDiv">
+    <div style="width: 20%">
+      <app-sidebar sidebarValue="profile"></app-sidebar>
+    </div>
+    <div class="mainDiv">
+      <div class="edit_changePasswordDiv">
+        <div class="editDiv" (click)="changeStatus()">
+          <mat-icon>edit</mat-icon>
+          <h1>edit</h1>
+        </div>
+        <h1>Change Password</h1>
+      </div>
+      <div
+        class="userDetailsBox"
+        *ngIf="status == 'show_details'; else editDiv"
+      >
+        <div class="descBox">
+          <h1>First Name</h1>
+          <h1>{{ userDetails.firstName }}</h1>
+        </div>
+        <div class="descBox">
+          <h1>Last Name</h1>
+          <h1>{{ userDetails.lastName }}</h1>
+        </div>
+        <div class="descBox">
+          <h1>Gender</h1>
+          <h1>{{ userDetails.gender }}</h1>
+        </div>
+        <div class="descBox">
+          <h1>Email Address</h1>
+          <h1>{{ userDetails.email }}</h1>
+        </div>
+        <div class="descBox">
+          <h1>Mobile Number</h1>
+          <h1>{{ userDetails.mobile }}</h1>
+        </div>
+        <div class="descBox">
+          <h1>Date of Birth</h1>
+          <h1>{{ userDetails.dob }}</h1>
+        </div>
+      </div>
+
+      <ng-template #editDiv>
+        <form class="editDivs" [formGroup]="editUserDetails" (ngSubmit)="editUserDetailsHandler()">
+          <div class="individualDiv">
+            <h1>First Name</h1>
+            <input
+              type="text"
+              placeholder="Enter First Name"
+              style="height: 35px; padding-left: 10px"
+              formControlName="firstName"
+            />
+          </div>
+          <div class="individualDiv">
+            <h1>Last Name</h1>
+            <input
+              type="text"
+              placeholder="Enter Last Name"
+              style="height: 35px; padding-left: 10px"
+              formControlName="lastName"
+            />
+          </div>
+          <div class="individualDiv">
+            <h1>Gender</h1>
+            <mat-form-field appearance="fill">
+              <mat-label>Select Gender</mat-label>
+              <mat-select [(value)]="genderSelected">
+                <mat-option value="Male">Male</mat-option>
+                <mat-option value="Female">Female</mat-option>
+                <mat-option value="Other">Other</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="individualDiv">
+            <h1>Email Address</h1>
+            <input
+              type="text"
+              placeholder="Enter Email Address"
+              style="height: 35px; padding-left: 10px"
+              formControlName="email"
+            />
+          </div>
+          <div class="individualDiv">
+            <h1>Mobile Number</h1>
+            <input
+              type="text"
+              placeholder="Enter Mobile Number"
+              style="height: 35px; padding-left: 10px"
+              formControlName="mobile"
+            />
+          </div>
+          <div class="individualDiv">
+            <h1>Date of Birth</h1>
+            <input
+              type="date"
+              placeholder="Enter Date of Birth"
+              style="height: 35px; padding-left: 10px"
+              formControlName="dob"
+            />
+          </div>
+          <div class="buttonsDiv">
+            <button class="saveBtn">Save</button>
+            <button class="cancelBtn" (click)="changeStatus()">Cancel</button>
+          </div>
+        </form>
+      </ng-template>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="sidebarMainDiv">
+  <h1
+    class="h1TextTage"
+    [style.border-right]="
+      sidebarValue == 'profile'
+        ? '2px solid rgb(25,118,210)'
+        : '2px solid white'
+    "
+    (click)="onButtonClick('/home')"
+  >
+    PROFILE
+  </h1>
+  <h1
+    class="h1TextTage"
+    [style.border-right]="
+      sidebarValue == 'task' ? '2px solid rgb(25,118,210)' : '2px solid white'
+    "
+    (click)="onButtonClick('/task')"
+  >
+    TASK
+  </h1>
+  <h1
+    class="h1TextTage"
+    [style.border-right]="
+      sidebarValue == 'sprints'
+        ? '2px solid rgb(25,118,210)'
+        : '2px solid white'
+    "
+    (click)="onButtonClick('/sprints')"
+  >
+    SPRINTS
+  </h1>
+  <div class="logout">
+    <mat-icon>logout</mat-icon>
+    <h1 class="h1TextTage" (click)="logoutUser()">LOGOUT</h1>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<app-header name="login"></app-header>
+<div class="lgoinMainDiv">
+  <form [formGroup]="loginDetails" (ngSubmit)="onSubmit()" class="loginForm">
+    <p style="align-self: center; font-size: 20px; margin-bottom: -10px;">Log In</p>
+    <div style="display: flex; flex-direction: column; row-gap: 10px">
+      <label>Email</label>
+      <input
+        type="text"
+        placeholder="Enter Email"
+        formControlName="email"
+        style="height: 25px; padding-left: 10px"
+      />
+    </div>
+    <div style="display: flex; flex-direction: column; row-gap: 10px">
+      <label>Password</label>
+      <input
+        type="password"
+        placeholder="Enter Password"
+        formControlName="password"
+        style="height: 25px; padding-left: 10px"
+      />
+    </div>
+    <button mat-raised-button color="primary">Primary</button>
+    <p class="signupText" (click)="navigateToRegister()">
+      Don't have an account? Sign Up
+    </p>
+  </form>
+</div>

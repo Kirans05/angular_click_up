@@ -1,0 +1,24 @@
+.lgoinMainDiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 2% 0% 0%;
+}
+
+.lgoinMainDiv .loginForm {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  border: 1px solid rgb(157, 154, 154);
+  width: 25%;
+  padding: 2%;
+}
+
+.lgoinMainDiv .signupText {
+  color: blue;
+  text-align: center;
+}
+
+.lgoinMainDiv .signupText:hover {
+  cursor: pointer;
+}
